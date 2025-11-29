@@ -138,7 +138,6 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.tab_widget)
     def load_ui_config(self):
         """Load configuration"""
-        self.screen_direction = self.config_manager.get_value('Monitor', 'screen_orientation') or 0
         self.ui_follow_led_color = self.config_manager.get_value('Monitor', 'follow_led_color') or 0
     
         self.led_mode = self.config_manager.get_value('LED', 'mode') or 0
@@ -162,16 +161,34 @@ class MainWindow(QMainWindow):
         self.setting_led_task_is_running = self.config_manager.get_value('LED', 'is_run_on_startup') or False
         self.setting_fan_task_is_running = self.config_manager.get_value('Fan', 'is_run_on_startup') or False
         self.setting_oled_task_is_running = self.config_manager.get_value('OLED', 'is_run_on_startup') or False
-        self.setting_service_is_exist = self.config_manager.get_value('Service', 'is_exist_on_rpi') or False
-        self.setting_service_is_running = self.config_manager.get_value('Service', 'is_run_on_startup') or False
 
-        # Load Monitor interface parameters
-        if self.screen_direction == 0:
+        if self.service_generator.check_service_is_exist():
+            self.setting_service_is_exist = True
+            self.setting_service_is_running = True
+        else:
+            self.setting_service_is_exist = False
+            self.setting_service_is_running = False
+        self.config_manager.set_value('Service', 'is_exist_on_rpi', self.setting_service_is_exist)
+        self.config_manager.set_value('Service', 'is_run_on_startup', self.setting_service_is_running)
+        
+        #self.showMaximized()
+        self.screen_resolution = QApplication.desktop().screenGeometry()
+        width = self.screen_resolution.width()
+        height = self.screen_resolution.height()
+        #self.showNormal()
+
+        if width > height:
+            self.screen_direction = 0
             self.ui_main_width = 800
             self.ui_main_height = 420
-        elif self.screen_direction == 1:
+        else:
+            self.screen_direction = 1
             self.ui_main_width = 480
             self.ui_main_height = 740
+        self.config_manager.set_value('Monitor', 'screen_orientation', self.screen_direction)
+        self.config_manager.save_config()
+
+        # Load Monitor interface parameters
         self.setFixedSize(self.ui_main_width, self.ui_main_height)
         self.monitoring_tab.resetUiSize(self.width(), self.height())
         self.led_tab.resetUiSize(self.width(), self.height())
