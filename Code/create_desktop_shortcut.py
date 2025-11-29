@@ -24,7 +24,7 @@ Name=Freenove Computer Case
 Comment=Freenove Computer Case Kit Pro for Raspberry Pi
 Exec=
 Icon=
-Terminal=true
+Terminal=false
 Categories=Application;Development;
 """
             with open(desktop_file_path, 'w') as f:
