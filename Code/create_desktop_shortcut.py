@@ -83,7 +83,7 @@ Categories=Application;Development;
         
         # Set file as executable
         try:
-            os.chmod(desktop_file_path, 0o777)
+            os.chmod(desktop_file_path, 0o755)
             # Also make the run_app.sh script executable
             os.chmod(run_script_path, 0o755)
             print("Desktop file and script set as executable")
