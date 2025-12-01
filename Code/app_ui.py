@@ -410,6 +410,8 @@ class MainWindow(QMainWindow):
                 except subprocess.TimeoutExpired:
                     self.led_process.kill()  # Force kill process
                 self.led_process = None
+            elif self.led_process is not None and self.led_process.poll() is not None:
+                self.led_process = None
     def send_led_mode_to_expansion(self, led_mode):
         """Send LED mode to expansion board"""
         if led_mode == 0:
@@ -533,6 +535,9 @@ class MainWindow(QMainWindow):
                     self.fan_process.wait(timeout=0.1)  # Wait up to 0.1 seconds
                 except subprocess.TimeoutExpired:
                     self.fan_process.kill()  # Force kill process
+                self.fan_process = None
+            elif self.fan_process is not None and self.fan_process.poll() is not None:
+                # If process is terminated, set it to None
                 self.fan_process = None
     def send_fan_mode_to_expansion(self, mode):
         """Send fan mode to expansion board"""
