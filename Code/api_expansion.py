@@ -49,7 +49,8 @@ class Expansion:
             else:
                 self.bus.write_byte_data(self.address, reg, values)
         except IOError as e:
-            print("Error writing to I2C bus:", e)
+            #print("Error writing to I2C bus:", e)
+            pass
 
     def read(self, reg, length=1):
         # Read data from I2C register
