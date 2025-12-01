@@ -537,7 +537,6 @@ class MainWindow(QMainWindow):
                     self.fan_process.kill()  # Force kill process
                 self.fan_process = None
             elif self.fan_process is not None and self.fan_process.poll() is not None:
-                # If process is terminated, set it to None
                 self.fan_process = None
     def send_fan_mode_to_expansion(self, mode):
         """Send fan mode to expansion board"""
@@ -953,6 +952,7 @@ class MainWindow(QMainWindow):
                 else:
                     self.fan_tab.set_fan_mode(self.fan_mode)
                     self.send_fan_mode_to_expansion(self.fan_mode)
+                    self.fan_tab.fan_btn_test_coustom_code.setText("Test")
         
         elif current_tab_index == 3:
             if self.led_process is not None:
