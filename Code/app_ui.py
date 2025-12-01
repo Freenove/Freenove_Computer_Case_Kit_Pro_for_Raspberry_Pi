@@ -245,6 +245,8 @@ class MainWindow(QMainWindow):
                 self.send_fan_mode_to_expansion(self.fan_mode)
             if self.setting_oled_task_is_running is False:
                 self.set_oled_process(True)
+            if self.setting_service_is_exist is True and self.setting_service_is_running is True:
+                self.service_generator.restart_service_on_rpi()
     def load_ui_events(self):
         """Handle events"""
         # Monitor interface signals and slot functions
