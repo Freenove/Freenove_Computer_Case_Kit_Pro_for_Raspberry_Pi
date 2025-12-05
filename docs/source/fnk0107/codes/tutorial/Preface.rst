@@ -13,6 +13,10 @@ The RPi 5 delivers highly powerful performance with a CPU frequency of up to 2.4
 
 In this context, our case kit came into being. It not only addresses these issues, but also introduces advanced features.
 
+If you encounter any issues, feel free to contact us for prompt and free technical support.
+
+support@freenove.com
+
 Key Features
 *********************************
 

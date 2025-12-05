@@ -257,19 +257,20 @@ Others
     :class: table-line
     :align: center
     
-    +--------------------+----------------------------------+--------------------------+
-    | Fan Dust Filter x4 | Round Black Non-Slip Foot Pad x5 | 12mm LED Power Button x1 |
-    |                    |                                  |                          |
-    | |List34|           | |List35|                         | Black Sealing Gasket x1  |
-    |                    |                                  |                          |
-    |                    |                                  | M12 Nut x1               |
-    |                    |                                  |                          |
-    |                    |                                  | |List36|                 |
-    +--------------------+----------------------------------+--------------------------+
+    +--------------------------+--------------------+----------------------------------+----------------------+
+    | 12mm LED Power Button x1 | Fan Dust Filter x4 | Round Black Non-Slip Foot Pad x5 | Masking Tape x 1     |
+    |                          |                    |                                  |                      |
+    | Black Sealing Gasket x1  | |List34|           | |List35|                         |  |List40|            |
+    |                          |                    |                                  |                      |
+    | M12 Nut x1               |                    |                                  |                      |
+    |                          |                    |                                  |                      |
+    | |List36|                 |                    |                                  |                      |
+    +--------------------------+--------------------+----------------------------------+----------------------+
 
 .. |List34| image:: ../_static/imgs/List/List34.png
 .. |List35| image:: ../_static/imgs/List/List35.png
 .. |List36| image:: ../_static/imgs/List/List36.png
+.. |List40| image:: ../_static/imgs/List/List40.png
 
 Rquired but NOT Contained Parts
 *************************************
@@ -295,3 +296,5 @@ Rquired but NOT Contained Parts
 .. |List37| image:: ../_static/imgs/List/List37.png
 .. |List38| image:: ../_static/imgs/List/List38.png
 .. |List39| image:: ../_static/imgs/List/List39.png
+
+Before getting started, please check the part list. If any component is missing from your kit, do not start assembly; instead, please email our support team at support@freenove.com to get the missing parts.

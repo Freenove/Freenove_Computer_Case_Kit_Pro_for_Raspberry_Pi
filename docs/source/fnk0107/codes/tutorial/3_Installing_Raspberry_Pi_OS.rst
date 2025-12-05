@@ -30,6 +30,8 @@ There are various ways to burn the Raspberry Pi OS to SSD, each requiring differ
     | 3    | If there are spare M.2 NVME interface on the motherboard of your PC, you can insert the SSD to it to flash the OS.                                                     | PC with M.2 NVME interface                                  |
     +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
+.. _Incompatible_SSDs:
+
 **Caution: Incompatible SSDs**
 
 The recognition and read/write operations of the NVMe SSD are handled by the drivers of the Raspberry Pi 5. If you find that your SSD cannot be recognized by Pi 5 or is not readable/writable, please try to find a driver suitable for your SSD and install it on the Raspberry Pi, or replace the SSD, or purchase the adapter kit that comes with the SSD.
@@ -380,6 +382,30 @@ Raspberry Pi 5 integrates a Wi-Fi adaptor.If you did not connect Pi to WiFi. You
 .. image:: ../_static/imgs/3_Installing_Raspberry_Pi_OS/Chapter03_35.png
     :align: center
 
+3.1.8 Switching Taskbar Display
+=============================================
+
+If your kit is a non-display verion (**Model numbers: FNK0107A/B/C/H/K/L**), you can :ref:`skip this section by clicking here <fnk0107/codes/tutorial/3_installing_raspberry_pi_os:3.2 flashing os to nvme ssd>`.
+
+For versions equipped with a 4.3-inch IPS screen (**Model numbers: FNK0107P/Q/R/U/V/W**), after booting the RPi 5, the system will create two independent display areas: DSI-1 and HDMI-A-1. When connecting via VNC, you are viewing a mirrored display of HDMI-A-1. Since the system status bar is prioritized for display on the DSI screen, it is not included by default in the VNC interface. Please follow the instructions below to display the status bar in the HDMI-A-1 area.
+
+Right-click in any blank area upon the desktop and choose "**Desktop Preferences...**".
+
+.. image:: ../_static/imgs/3_Installing_Raspberry_Pi_OS/Chapter03_77.png
+    :align: center
+
+In the pop-up Control Centre window, select "**Taskbar**" from the left pane. Find the "**Location**" setting and change it from :red:`DSI-1 to HDMI-A-1`.
+
+.. image:: ../_static/imgs/3_Installing_Raspberry_Pi_OS/Chapter03_78.png
+    :align: center
+
+Once configured, the system status bar will switch over from the DSI-1 display area to the HDMI-A-1 display area.
+
+.. image:: ../_static/imgs/3_Installing_Raspberry_Pi_OS/Chapter03_79.png
+    :align: center
+
+:red:`For known system issues in VNC, such as incomplete display or misaligned mouse clicks after resolution switching, please refer to the` ":ref:`FNK0107-troubleshooting <fnk0107/codes/troubleshooting/issue_1:black bars at the bottom of the dsi screen>`" :red:`document located in the same directory.`
+
 3.2 Flashing OS to NVMe SSD
 ******************************************
 
@@ -390,7 +416,7 @@ If you do not use SSD or if you do not want to install the Raspberry Pi OS into 
 3.2.1 SSD Detecyion
 ==================================
 
-(Note: Not all SSDs are supported by Pi5.)
+(:ref:`Note: Not all SSDs are supported by Pi5. <Incompatible_SSDs>`)
 
 **Booting the Rpi 5 from SD card**, and run the following command in the Terminal to check whether SSD is detected.
 
@@ -677,7 +703,7 @@ The default boot order of Raspberry Pi is SD card -> SSD -> USB, Therefore, when
 
 If you want the Raspberry Pi to boot from the SSD first, please continue with the following steps to modify the boot order. The boot order is saved in the Pi’s EEPROM, so it does not matter whether you modify the boot order on SD card system or SSD system.
 
-:ref:`If you do not want to change the boot order, please skip this chapter. <fnk0107/codes/tutorial/4_功能测试:chapter 4>`
+:ref:`If you do not want to change the boot order, please skip this chapter. <fnk0107/codes/tutorial/4_app_control:chapter 4 app control>`
 
 Configuring the Boot Order
 ---------------------------------------

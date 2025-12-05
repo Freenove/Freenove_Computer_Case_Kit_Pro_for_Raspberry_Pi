@@ -107,11 +107,9 @@ The case is equipped with four ARGB fan headers, whose lighting effects are sync
 Pi ARGB Fan
 ====================================
 
-Pi FAN 1: Directly connected to the Raspberry Pi 5, this fan's speed is automatically regulated by the system based on CPU temperature to provide essential cooling for core components.
+Pi FAN 1: It is controlled directy by Raspberry Pi 5. For details, see: https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#fan-cases
 
-For details, see: https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#fan-cases
-
-Pi FAN 2: This independently controllable fan can be managed via I²C commands alongside other case fans, allowing for real-time monitoring and unified control. This design offers maximum flexibility for customized cooling solutions.
+Pi FAN 2: It is controlled by GPIO board. The way to control it is the same as the aforementioned Case ARGB Fans.
 
 EN IN (Enable Input)
 ====================================
@@ -231,7 +229,8 @@ At the time of this writing, this product only supports RPi5. The following show
 
 Hardware interface diagram of RPi 5 is shown below: 
 
-
+.. image:: ../_static/imgs/1_Introduction_to_Main_Components_/Chapter01_10.png
+    :align: center
 
 GPIO
 =======================
@@ -245,7 +244,7 @@ The Raspberry Pi CPU uses Broadcom (BCM) processing chips BCM2835, BCM2836 or BC
 
 Each pin is defined as below:
 
-.. image:: ../_static/imgs/1_Introduction_to_Main_Components_/Chapter01_10.png
+.. image:: ../_static/imgs/1_Introduction_to_Main_Components_/Chapter01_11.png
     :align: center
 
 For more details about pin definition of GPIO, please refer to https://pinout.xyz/
