@@ -164,7 +164,7 @@ The performance varies among different SSDs, and each test may have certain erro
 
 In the Preface, it is mentioned that the Raspberry Pi's PCIe Gen 3.0 has not been officially certified. While it is functional, its performance is not as reliable as desired. This chapter is presented as an exploratory section for assessing the speed capabilities of SSDs when used with PCIe Gen 3.0. **For practical applications, it is advised to opt for PCIe Gen 2.0 to ensure greater stability and dependability.**
 
-If your kit includes an NVMe Adapter Board (Model: **FNK0107A/H/P/U**), you can enable PCIe Gen 3.0 mode. If your adapter is a different model or no adjustment is needed, please skip this step.
+If your kit includes an NVMe Adapter Board (Model: **FNK0107A/H/P/U**), you can enable PCIe Gen 3.0 mode. If your adapter is a different model or no adjustment is needed, :ref:`please skip this step <fnk0107/codes/tutorial/what_s_next:what's next?>`.
 
 Enable PCIe Gen 3.0
 ----------------------------------------

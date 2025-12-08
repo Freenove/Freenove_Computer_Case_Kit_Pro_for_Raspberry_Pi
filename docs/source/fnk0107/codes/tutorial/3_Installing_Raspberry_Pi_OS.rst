@@ -404,7 +404,7 @@ Once configured, the system status bar will switch over from the DSI-1 display a
 .. image:: ../_static/imgs/3_Installing_Raspberry_Pi_OS/Chapter03_79.png
     :align: center
 
-:red:`For known system issues in VNC, such as incomplete display or misaligned mouse clicks after resolution switching, please refer to the` ":ref:`FNK0107-troubleshooting <fnk0107/codes/troubleshooting/issue_1:black bars at the bottom of the dsi screen>`" :red:`document located in the same directory.`
+:red:`For known system issues in VNC, such as incomplete display or misaligned mouse clicks after resolution switching, please refer to the` ":ref:`FNK0107-troubleshooting <fnk0107/codes/troubleshooting/issue_1:issue 1: black bars at the bottom of the dsi screen>`" :red:`document located in the same directory.`
 
 3.2 Flashing OS to NVMe SSD
 ******************************************

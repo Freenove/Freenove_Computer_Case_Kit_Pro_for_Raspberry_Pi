@@ -314,6 +314,8 @@ If connecting to PI FAN 2 connector, it will be controlled by the GPIO Adapter B
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_24.png
     :align: center
 
+:combo:`red font-bolder:Note: If the cooling tower fan does not spin, or if all fans fail to spin in Follow RPi mode, please refer to the` :ref:`"FNK0107-troubleshooting" <fnk0107/codes/troubleshooting/issue_1:issue 1: black bars at the bottom of the dsi screen>` :combo:`red font-bolder:document located in the same directory.`
+
 Next, we will walk you through the different fan modes to help you better understand the case fan control interface.
 
 Follow Case
