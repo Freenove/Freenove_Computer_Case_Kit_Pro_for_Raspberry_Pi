@@ -2,10 +2,12 @@
 Issue 3: Fans Not Work
 ##############################################################################
 
+At the time of this writing, compatibility issues associated with the latest Raspberry Pi OS release ("Trixie") have been observed. Once an official update addressing these issues is available, we will promptly update our resources and discontinue the relevant troubleshooting notes here
+
 Description
 *************************************
 
-When the cooling tower fan is connected to PI FAN 1, it operates under direct control of the Raspberry Pi. In Follow RPi mode, the case fans’ rotation is managed by the GPIO board, which reads the Raspberry Pi’s fan interface PWM value in real time.
+When the cooling tower fan is connected to PI FAN 1, it operates under direct control of the Raspberry Pi. In Follow RPi mode, the case fans' rotation is managed by the GPIO board, which reads the Raspberry Pi's fan interface PWM value in real time.
 
 If the cooling tower fan does not spin, or if all fans fail to spin in Follow RPi mode, the issue may be caused by one of the following:
 

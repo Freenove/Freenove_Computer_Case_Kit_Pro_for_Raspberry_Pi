@@ -210,7 +210,7 @@ If not, please skip directly to the :ref:`Remote desktop & VNC <fnk0107/codes/tu
 3.1.4 DSI Touchscreen Desktop
 =================================================
 
-If your model is equipped with a 4.3-inch Screen (Models: **FNK0107P\Q\R\U\V\W**), after connecting the power and booting up the RPi 5, you will see the following interface. 
+If your model is equipped with a 4.3-inch Screen (Models: **FNK0107P/Q/R/U/V/W**), after connecting the power and booting up the RPi 5, you will see the following interface. 
 
 The system will automatically detect and enable the DSI touchscreen functionality. You can directly use your finger to tap icons, swipe through pages, and perform other operations. To change the screen orientation, you can configure it via **Preferences > Screen Configuration**.
 

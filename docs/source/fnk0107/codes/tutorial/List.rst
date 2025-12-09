@@ -44,11 +44,11 @@ Acrylic Parts
     |                               |                                                        |
     |                               | Portrait Orientation Screen Bracket x 2                |
     |                               |                                                        |
-    |                               | (:red:`Only for FNK0107P\Q\R\U\V\W`)                   |
+    |                               | (:red:`Only for FNK0107P/Q/R/U/V/W`)                   |
     |                               |                                                        |
     |                               | |List03|                                               |
     +-------------------------------+--------------------------------------------------------+
-    | Acrylic Side Plate x 1        | Acrylic Side Plate(:red:`Only for FNK0107P\Q\R\U\V\W`) |
+    | Acrylic Side Plate x 1        | Acrylic Side Plate(:red:`Only for FNK0107P/Q/R/U/V/W`) |
     |                               |                                                        |
     | |List04|                      | |List05|                                               |
     +-------------------------------+--------------------------------------------------------+
