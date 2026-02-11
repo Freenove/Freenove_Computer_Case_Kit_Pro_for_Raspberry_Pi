@@ -220,9 +220,9 @@ It is set to rainbow mode by default, as shown below.
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_16.png
     :align: center
 
-There are four preset lighting modes available: **Rainbow**、**Breathing**、**Follow**、**Manual**. You can select the corresponding option to switch among the modes.
+There are four preset lighting modes available: **Rainbow**、 **Breathing**、 **Follow**、 **Manual**. You can select the corresponding option to switch among the modes.
 
-Note: Only in Breathing, Follow, and Manual modes can the color of the RGB lights be controlled using the slider below. In other modes, the color of the RGB lights cannot be adjusted.
+Note: Only in **Breathing**, **Follow**, and **Manual** modes can the color of the RGB lights be controlled using the slider below. In other modes, the color of the RGB lights cannot be adjusted.
 
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_17.png
     :align: center
@@ -265,7 +265,7 @@ Freenove_Computer_Case_Kit_Pro_for_Raspberry_Pi/Code/api_expansion.py
 
 4.	If the LED lights show no response after you modify the code and click "Test," it indicates an error in your code preventing it from running properly. Please review your code.
 
-5.	If you want the Custom mode code to execute automatically on every startup, please refer to the instructions in the ":ref:`4.2.4 Settings Interface <fnk0107/codes/tutorial/4_app_control:4.2.4 settings interface>`" Section.
+5.	If you want the Custom mode code to execute automatically on every startup, please refer to the instructions in the ":ref:`4.2.4 Settings Interface <fnk0107/codes/tutorial/4_app_control:4.2.5 settings interface>`" Section.
 
 4.2.3 Fan Control Interface
 ======================================
@@ -384,7 +384,7 @@ The Calculation formula is shown below:
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_28.png
     :align: center
 
-You can configure the Min Speed和Max Speed via the software.
+You can configure the Min Speed and Max Speed via the software.
 
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_29.png
     :align: center
@@ -395,6 +395,9 @@ Manual
 In Manual mode, you can directly set the PWM output for the FAN1-4 and PI FAN 2 connectors via the software.
 
 Note: The slider labeled "**FAN 5**" in the interface controls the **PI FAN 2**. To manually adjust the speed of the Raspberry Pi 5 active cooler, it must be connected to the **PI FAN 2** header.
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_49.png
+    :align: center
 
 Custom
 ---------------------------
@@ -422,9 +425,170 @@ Freenove_Computer_Case_Kit_Pro_for_Raspberry_Pi/Code/task_fan.py
 
 4.	If the fans do no response after you modify the code and click "Test," it indicates an error in your code preventing it from running properly. Please review your code.
 
-5.	If you want the Custom mode code to execute automatically on every startup, please refer to the instructions in the ":ref:`4.2.4 Settings Interface <fnk0107/codes/tutorial/4_app_control:4.2.4 settings interface>`" Section.
+5.	If you want the Custom mode code to execute automatically on every startup, please refer to the instructions in the ":ref:`4.2.4 Settings Interface <fnk0107/codes/tutorial/4_app_control:4.2.5 settings interface>`" Section.
 
-4.2.4 Settings Interface
+4.2.4 OLED Control Interface
+===============================
+
+This is the interface for controlling the OLED display content. You can choose from different display layouts according to your preference.  
+
+By default, the OLED cycles through four screens: Time, Usage, Temp, and Fan. If you uncheck any of these, that screen will be skipped during the cycle.
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_50.png
+    :align: center
+
+Below are six customizable options. Click the drop-down lists to select different time formats, data display orders, display durations, and more.
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_51.png
+    :align: center
+
+Adjusting Display Durations
+-------------------------------
+
+The duration for each display screen can be adjusted by clicking the "**Sub**" button to decrease by 0.5s or the "**Add**" button to increase by 0.5s.
+
+To adjust the display time for a single interface, simply uncheck the other screens so that only the desired one remains active.
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_52.png
+    :align: center
+
+Modifying Date Format
+--------------------------------
+
+.. table::
+    :class: table-line
+    :align: center
+    
+    +----------------+----------------+
+    | Options        | OLED Display   |
+    +================+================+
+    | |Chapter04_53| | |Chapter04_54| |
+    +----------------+----------------+
+    | |Chapter04_55| | |Chapter04_56| |
+    +----------------+----------------+
+    | |Chapter04_57| | |Chapter04_58| |
+    +----------------+----------------+
+
+.. |Chapter04_53| image:: ../_static/imgs/4_APP_Control/Chapter04_53.png
+.. |Chapter04_54| image:: ../_static/imgs/4_APP_Control/Chapter04_54.png
+.. |Chapter04_55| image:: ../_static/imgs/4_APP_Control/Chapter04_55.png
+.. |Chapter04_56| image:: ../_static/imgs/4_APP_Control/Chapter04_56.png
+.. |Chapter04_57| image:: ../_static/imgs/4_APP_Control/Chapter04_57.png
+.. |Chapter04_58| image:: ../_static/imgs/4_APP_Control/Chapter04_58.png
+
+Changing Time Format
+-------------------------------
+
+.. table::
+    :class: table-line
+    :align: center
+    
+    +----------------+----------------+
+    | Options        | OLED Display   |
+    +================+================+
+    | |Chapter04_59| | |Chapter04_60| |
+    +----------------+----------------+
+    | |Chapter04_61| | |Chapter04_62| |
+    +----------------+----------------+
+
+.. |Chapter04_59| image:: ../_static/imgs/4_APP_Control/Chapter04_59.png
+.. |Chapter04_60| image:: ../_static/imgs/4_APP_Control/Chapter04_60.png
+.. |Chapter04_61| image:: ../_static/imgs/4_APP_Control/Chapter04_61.png
+.. |Chapter04_62| image:: ../_static/imgs/4_APP_Control/Chapter04_62.png
+
+Modifying the Display Order of CPU, MEM, and DISK Usage
+--------------------------------------------------------------
+
+.. table::
+    :class: table-line
+    :align: center
+    
+    +----------------+----------------+
+    | Options        | OLED Display   |
+    +================+================+
+    | |Chapter04_63| | |Chapter04_64| |
+    +----------------+----------------+
+    | |Chapter04_65| | |Chapter04_66| |
+    +----------------+----------------+
+    | |Chapter04_67| | |Chapter04_68| |
+    +----------------+----------------+
+    | |Chapter04_69| | |Chapter04_70| |
+    +----------------+----------------+
+    | |Chapter04_71| | |Chapter04_72| |
+    +----------------+----------------+
+    | |Chapter04_73| | |Chapter04_74| |
+    +----------------+----------------+
+
+.. |Chapter04_63| image:: ../_static/imgs/4_APP_Control/Chapter04_63.png
+.. |Chapter04_64| image:: ../_static/imgs/4_APP_Control/Chapter04_64.png
+.. |Chapter04_65| image:: ../_static/imgs/4_APP_Control/Chapter04_65.png
+.. |Chapter04_66| image:: ../_static/imgs/4_APP_Control/Chapter04_66.png
+.. |Chapter04_67| image:: ../_static/imgs/4_APP_Control/Chapter04_67.png
+.. |Chapter04_68| image:: ../_static/imgs/4_APP_Control/Chapter04_68.png
+.. |Chapter04_69| image:: ../_static/imgs/4_APP_Control/Chapter04_69.png
+.. |Chapter04_70| image:: ../_static/imgs/4_APP_Control/Chapter04_70.png
+.. |Chapter04_71| image:: ../_static/imgs/4_APP_Control/Chapter04_71.png
+.. |Chapter04_72| image:: ../_static/imgs/4_APP_Control/Chapter04_72.png
+.. |Chapter04_73| image:: ../_static/imgs/4_APP_Control/Chapter04_73.png
+.. |Chapter04_74| image:: ../_static/imgs/4_APP_Control/Chapter04_74.png
+
+Changing the Display Order of Pi and Case Temperature
+---------------------------------------------------------
+
+.. table::
+    :class: table-line
+    :align: center
+    
+    +----------------+----------------+
+    | Options        | OLED Display   |
+    +================+================+
+    | |Chapter04_75| | |Chapter04_76| |
+    +----------------+----------------+
+    | |Chapter04_77| | |Chapter04_78| |
+    +----------------+----------------+
+
+.. |Chapter04_75| image:: ../_static/imgs/4_APP_Control/Chapter04_75.png
+.. |Chapter04_76| image:: ../_static/imgs/4_APP_Control/Chapter04_76.png
+.. |Chapter04_77| image:: ../_static/imgs/4_APP_Control/Chapter04_77.png
+.. |Chapter04_78| image:: ../_static/imgs/4_APP_Control/Chapter04_78.png
+
+Adjusting the Display Order of Pi, C1, and C2 Fans PWM 
+------------------------------------------------------------
+
+.. table::
+    :class: table-line
+    :align: center
+    
+    +----------------+----------------+
+    | Options        | OLED Display   |
+    +----------------+----------------+
+    | |Chapter04_79| | |Chapter04_80| |
+    +----------------+----------------+
+    | |Chapter04_81| | |Chapter04_82| |
+    +----------------+----------------+
+    | |Chapter04_83| | |Chapter04_84| |
+    +----------------+----------------+
+    | |Chapter04_85| | |Chapter04_86| |
+    +----------------+----------------+
+    | |Chapter04_87| | |Chapter04_88| |
+    +----------------+----------------+
+    | |Chapter04_89| | |Chapter04_90| |
+    +----------------+----------------+
+
+.. |Chapter04_79| image:: ../_static/imgs/4_APP_Control/Chapter04_79.png
+.. |Chapter04_80| image:: ../_static/imgs/4_APP_Control/Chapter04_80.png
+.. |Chapter04_81| image:: ../_static/imgs/4_APP_Control/Chapter04_81.png
+.. |Chapter04_82| image:: ../_static/imgs/4_APP_Control/Chapter04_82.png
+.. |Chapter04_83| image:: ../_static/imgs/4_APP_Control/Chapter04_83.png
+.. |Chapter04_84| image:: ../_static/imgs/4_APP_Control/Chapter04_84.png
+.. |Chapter04_85| image:: ../_static/imgs/4_APP_Control/Chapter04_85.png
+.. |Chapter04_86| image:: ../_static/imgs/4_APP_Control/Chapter04_86.png
+.. |Chapter04_87| image:: ../_static/imgs/4_APP_Control/Chapter04_87.png
+.. |Chapter04_88| image:: ../_static/imgs/4_APP_Control/Chapter04_88.png
+.. |Chapter04_89| image:: ../_static/imgs/4_APP_Control/Chapter04_89.png
+.. |Chapter04_90| image:: ../_static/imgs/4_APP_Control/Chapter04_90.png
+
+4.2.5 Settings Interface
 ===============================
 
 This interface integrates advanced customization features, allowing you to edit code, debug, and create startup tasks for the case LED lights, fans, and OLED display.
