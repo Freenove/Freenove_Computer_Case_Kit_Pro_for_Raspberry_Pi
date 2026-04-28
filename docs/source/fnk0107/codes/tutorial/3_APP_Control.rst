@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter 4 APP Control
+Chapter 3 APP Control
 ##############################################################################
 
 Before powering on the Freenove Computer Case Kit Pro for Raspberry Pi, please make sure that all cable connections are correct.
@@ -8,10 +8,33 @@ Before powering on the Freenove Computer Case Kit Pro for Raspberry Pi, please m
 
 :red:`Failure to do so may result in the Freenove Computer Case Kit Pro for Raspberry Pi being unusable or causing damage to components.`
 
-4.1 Boot Behavior & Environment Settings
+How to Insert and Take out SD Card
+*********************************************
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_91.png
+    :align: center
+
+Remove the SD card with the written system from the card reader. 
+
+Insert it into the self-ejecting TF card slot on the back of the case :red:`with the gold contacts facing up`.
+
+Push the SD card in until you hear a click, indicating it is securely locked in place. 
+
+To eject the SD card, press it in again until you hear a click, and the card will pop out.
+
+Installing Raspberry Pi OS
+*********************************************
+
+If you have not yet installed the Raspberry Pi OS, please refer to the documentation :ref:`Installing Raspberry Pi OS <fnk0107/codes/tutorial/installing_raspberry_pi_os:installing raspberry pi os>` under the directory **Freenove Computer Case Kit Pro for Raspberry Pi** to install the OS to your SD card or SSD. 
+
+**Important note** for users of the **FNK0107B/C/K/L/Q/R/V/W** models: due to hardware limitations of the Dual-NVMe and Quad-NVMe Adapter Boards, please **do not** enable **PCIe 3.0** mode, as this may cause the Raspberry Pi to fail to boot.
+
+If you have a display ready, please continue reading the tutorial below.
+
+3.1 Boot Behavior & Environment Settings
 **************************************************
 
-4.1.1 What to Expect on First Startup
+3.1.1 What to Expect on First Startup
 ==================================================
 
 When you first power on the assembled chassis, the Raspberry Pi does not talk to the GPIO adapter board. This causes the board to operate on its own in a default mode, and you will observe the following.
@@ -66,7 +89,7 @@ In this case, you can connect a screen to your Raspberry Pi or access it via VNC
 
 :red:`If you have any questions of the above, please contact us at support@freenove.com`
 
-4.1.2 Software Setup
+3.1.2 Software Setup
 ======================================
 
 Code downloading
@@ -150,11 +173,26 @@ Run the following two commands one by one in the Raspberry Pi terminal to create
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_11.png
     :align: center
 
+The icon above corresponds to the command shown below.
+
+.. code-block:: console
+
+    cd Freenove_Computer_Case_Kit_Pro_for_Raspberry_Pi/Code/
+    python app_ui.py
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_92.png
+    :align: center
+
+After completing this step, you will find the application in the “**Programming**” section of the menu.  If you accidentally delete the desktop shortcut or wish to add the app to the top launcher, simply right-click “**FNK0107**” and select “**Add to Desktop**”or “**Add to Launcher**”. 
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_93.png
+    :align: center
+
 :red:`If you are interested in the code implementation, you can explore the files in the Freenove_Computer_Case_Kit_Pro_for_Raspberry_Pi/Code directory.`
 
 :red:`Should you wish to modify the code, please ensure you back it up first to avoid potential software malfunctions caused by unintended changes.`
 
-4.2 About the Case Control Software
+3.2 About the Case Control Software
 ***********************************************
 
 With the environment configured from the previous chapter, the accompanying host software can now be used to manage case functions including ARGB lighting, the OLED display, and fan control. 
@@ -171,7 +209,7 @@ The software interface is as shown below.
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_13.png
     :align: center
 
-4.2.1 Dashboard Monitoring
+3.2.1 Dashboard Monitoring
 ===================================================
 
 The dashboard provides live monitoring of key RPi 5 and case component stats, giving you an at-a-glance view of the system status.
@@ -207,7 +245,7 @@ If these data cannot be obtained consistently, please contact us by email: suppo
 
 :red:`For those interested in the interface implementation, please refer to the files api_systemInfo.py and api_expansion.py in the Freenove_Computer_Case_Kit_Pro_for_Raspberry_Pi/Code directory.`
 
-4.2.2 LED Control Interface
+3.2.2 LED Control Interface
 ===================================================
 
 This is the control interface for the case ARGB lights. You can select different modes to display various lighting effects.
@@ -265,9 +303,9 @@ Freenove_Computer_Case_Kit_Pro_for_Raspberry_Pi/Code/api_expansion.py
 
 4.	If the LED lights show no response after you modify the code and click "Test," it indicates an error in your code preventing it from running properly. Please review your code.
 
-5.	If you want the Custom mode code to execute automatically on every startup, please refer to the instructions in the ":ref:`4.2.4 Settings Interface <fnk0107/codes/tutorial/4_app_control:4.2.5 settings interface>`" Section.
+5.	If you want the Custom mode code to execute automatically on every startup, please refer to the instructions in the ":ref:`3.2.4 Settings Interface <fnk0107/codes/tutorial/3_app_control:3.2.5 settings interface>`" Section.
 
-4.2.3 Fan Control Interface
+3.2.3 Fan Control Interface
 ======================================
 
 This is the case fan control interface for convenient fan management. The interface will change when you select different modes: Follow Case, Follow RPi, or Manual mode.
@@ -425,9 +463,9 @@ Freenove_Computer_Case_Kit_Pro_for_Raspberry_Pi/Code/task_fan.py
 
 4.	If the fans do no response after you modify the code and click "Test," it indicates an error in your code preventing it from running properly. Please review your code.
 
-5.	If you want the Custom mode code to execute automatically on every startup, please refer to the instructions in the ":ref:`4.2.4 Settings Interface <fnk0107/codes/tutorial/4_app_control:4.2.5 settings interface>`" Section.
+5.	If you want the Custom mode code to execute automatically on every startup, please refer to the instructions in the ":ref:`3.2.4 Settings Interface <fnk0107/codes/tutorial/3_app_control:3.2.5 settings interface>`" Section.
 
-4.2.4 OLED Control Interface
+3.2.4 OLED Control Interface
 ===============================
 
 This is the interface for controlling the OLED display content. You can choose from different display layouts according to your preference.  
@@ -588,7 +626,7 @@ Adjusting the Display Order of Pi, C1, and C2 Fans PWM
 .. |Chapter04_89| image:: ../_static/imgs/4_APP_Control/Chapter04_89.png
 .. |Chapter04_90| image:: ../_static/imgs/4_APP_Control/Chapter04_90.png
 
-4.2.5 Settings Interface
+3.2.5 Settings Interface
 ===============================
 
 This interface integrates advanced customization features, allowing you to edit code, debug, and create startup tasks for the case LED lights, fans, and OLED display.

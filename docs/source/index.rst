@@ -38,10 +38,15 @@ This product provides the following online documents.
    fnk0107/codes/tutorial/List.rst
    fnk0107/codes/tutorial/1_Introduction_to_Main_Components_.rst
    fnk0107/codes/tutorial/2_Case_Assembly.rst
-   fnk0107/codes/tutorial/3_Installing_Raspberry_Pi_OS.rst
-   fnk0107/codes/tutorial/4_APP_Control.rst
-   fnk0107/codes/tutorial/5_Speed_Test.rst
+   fnk0107/codes/tutorial/3_APP_Control.rst
+   fnk0107/codes/tutorial/4_Speed_Test.rst
    fnk0107/codes/tutorial/What_s_next.rst
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Installing
+
+   fnk0107/codes/tutorial/Installing_Raspberry_Pi_OS.rst
 
 .. toctree::
    :maxdepth: 1
@@ -50,3 +55,4 @@ This product provides the following online documents.
    fnk0107/codes/Troubleshooting/Issue_1.rst
    fnk0107/codes/Troubleshooting/Issue_2.rst
    fnk0107/codes/Troubleshooting/Issue_3.rst
+

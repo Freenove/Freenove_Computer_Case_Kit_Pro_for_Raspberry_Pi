@@ -1,10 +1,10 @@
 ##############################################################################
-Chapter 5 Speed Test
+Chapter 4 Speed Test
 ##############################################################################
 
 This is an additional chapter for those who wish to test the read and write speeds of their SSD and SD Card. 
 
-5.1 SD Card Speed Test
+4.1 SD Card Speed Test
 ******************************
 
 Raspberry Pi's official microSD cards support DDR50 and SDR104 bus speeds, with a maximum transfer rate of up to 104 MB/s. 
@@ -56,7 +56,7 @@ Test result:
 .. image:: ../_static/imgs/5_Speed_Test/Chapter05_04.png
     :align: center
 
-5.2 SSD Speed Test
+4.2 SSD Speed Test
 *********************************
 
 The Raspberry Pi 5 includes a PCIe x1 slot that is certified for PCIe Gen 2.0, providing a theoretical maximum throughput of 5GT/sec, which roughly translates to 500MB/sec for read and write operations. Although this slot is not officially certified for PCIe Gen 3.0, it is possible to force the use of Gen 3.0 for potentially higher speeds.
@@ -71,7 +71,7 @@ https://en.wikipedia.org/wiki/PCI_Express#Comparison_table
 
 https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#pcie-gen-3-0
 
-5.2.1 Mounting SSD Devices
+4.2.1 Mounting SSD Devices
 ============================================
 
 Open the terminal, run the following commpad to get the SSD's information.
@@ -112,7 +112,7 @@ Execute the following commands to complete the mounting process.
 .. image:: ../_static/imgs/5_Speed_Test/Chapter05_08.png
     :align: center
 
-5.2.2 Speed Test
+4.2.2 Speed Test
 =================================
 
 After completing the mounting of all NVMe SSD devices, execute the following command to enter the PiBenchmarks directory. We will proceed with individual device speed testing.
@@ -159,7 +159,7 @@ The performance varies among different SSDs, and each test may have certain erro
 .. image:: ../_static/imgs/5_Speed_Test/Chapter05_14.png
     :align: center
 
-5.2.3 PCIe Gen3.0 Speed Test
+4.2.3 PCIe Gen3.0 Speed Test
 =====================================
 
 In the Preface, it is mentioned that the Raspberry Pi's PCIe Gen 3.0 has not been officially certified. While it is functional, its performance is not as reliable as desired. This chapter is presented as an exploratory section for assessing the speed capabilities of SSDs when used with PCIe Gen 3.0. **For practical applications, it is advised to opt for PCIe Gen 2.0 to ensure greater stability and dependability.**
