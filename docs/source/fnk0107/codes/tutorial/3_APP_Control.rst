@@ -89,7 +89,31 @@ In this case, you can connect a screen to your Raspberry Pi or access it via VNC
 
 :red:`If you have any questions of the above, please contact us at support@freenove.com`
 
-3.1.2 Software Setup
+3.1.2 Switching Taskbar Display
+=======================================
+
+If your kit is a non-display verion (**Model numbers: FNK0107A/B/C/H/K/L**), you can :ref:`skip this section by clicking here <fnk0107/codes/tutorial/3_app_control:3.1.3 software setup>`.
+
+For versions equipped with a 4.3-inch IPS screen (**Model numbers: FNK0107P/Q/R/U/V/W**), after booting the RPi 5, the system will create two independent display areas: DSI-1 and HDMI-A-1. When connecting via VNC, you are viewing a mirrored display of HDMI-A-1. Since the system status bar is prioritized for display on the DSI screen, it is not included by default in the VNC interface. Please follow the instructions below to display the status bar in the HDMI-A-1 area.
+
+Right-click in any blank area upon the desktop and choose "**Desktop Preferences...**".
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_94.png
+    :align: center
+
+In the pop-up Control Centre window, select "**Taskbar**" from the left pane. Find the "**Location**" setting and change it from :combo:`red font-bolder:DSI-1 to HDMI-A-1`.
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_95.png
+    :align: center
+
+Once configured, the system status bar will switch over from the DSI-1 display area to the HDMI-A-1 display area.
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_96.png
+    :align: center
+
+:red:`For known system issues in VNC, such as incomplete display or misaligned mouse clicks after resolution switching, please refer to the "` :ref:`FNK0107-troubleshooting <fnk0107/codes/troubleshooting/issue_1:description>` `:red:`" document located in the same directory.`
+
+3.1.3 Software Setup
 ======================================
 
 Code downloading
@@ -109,6 +133,8 @@ Software Packages Update
 -----------------------------------
 
 Run the following command on the terminal to update your Raspberry Pi's package list to the latest version.
+
+In the latest Raspberry Pi 13 (Trixie), passwordless sudo is officially disabled. You will need to enter your user password every time you run a sudo command. Please enter your user password when prompted. (Note: The default password is "**raspberry**", please replace it with your user password.)
 
 .. code-block:: console
 
@@ -183,7 +209,7 @@ The icon above corresponds to the command shown below.
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_92.png
     :align: center
 
-After completing this step, you will find the application in the “**Programming**” section of the menu.  If you accidentally delete the desktop shortcut or wish to add the app to the top launcher, simply right-click “**FNK0107**” and select “**Add to Desktop**”or “**Add to Launcher**”. 
+After completing this step, you will find the application in the "**Programming**" section of the menu.  If you accidentally delete the desktop shortcut or wish to add the app to the top launcher, simply right-click "**FNK0107**" and select "**Add to Desktop**"or "**Add to Launcher**". 
 
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_93.png
     :align: center
@@ -204,9 +230,14 @@ Double click the software with Freenove logo on RPi's desktop, and a window will
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_12.png
     :align: center
 
-The software interface is as shown below.
+Since passwordless sudo is disabled in Trixie, you will also be asked for your password again after reboot. Enter your user password in the pop-up terminal window.
 
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_13.png
+    :align: center
+
+The software interface is as shown below. The left window is the main software interface, and the right window displays debugging information.
+
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_97.png
     :align: center
 
 3.2.1 Dashboard Monitoring
@@ -269,19 +300,19 @@ If you do not turn ON the RGB lights, you can select the Close mode to turn off 
 
 Please note: Any lighting mode you select is temporary. The case will revert to its default mode after a shutdown and restart.
 
-To set a new default mode, select your desired mode and click the ”**Save**” button. 
+To set a new default mode, select your desired mode and click the "**Save**" button. 
 
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_18.png
     :align: center
 
-To restore the RGB lights and sliders to their default settings, click the ”Default” button once. 
+To restore the RGB lights and sliders to their default settings, click the "Default" button once. 
 
-If the four preset lighting modes do not meet your needs, you can use the ”Custom” mode for personalized settings.
+If the four preset lighting modes do not meet your needs, you can use the "Custom" mode for personalized settings.
 
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_19.png
     :align: center
 
-Click "**Edit**" will open the “task_led.py” file. You can modify the code in the editor.
+Click "**Edit**" will open the "task_led.py" file. You can modify the code in the editor.
 
 Click "**Test**" will create a temporary thread and run task_led.py, allowing you to quickly debug and observe the LED light effects.
 
@@ -445,7 +476,7 @@ If the predefined modes do not meet your needs, you can select the **Custom** mo
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_30.png
     :align: center
 
-Click "**Edit**" will open the “task_fan.py” file. You can modify the code in the editor.
+Click "**Edit**" will open the "task_fan.py" file. You can modify the code in the editor.
 
 Click "**Test**" will create a temporary thread and run task_fan.py, allowing you to quickly debug and observe the fan effects.
 
@@ -634,12 +665,10 @@ This interface integrates advanced customization features, allowing you to edit 
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_31.png
     :align: center
 
-Enable Terminal Display (For Debugging)
+Disable Terminal Display & Disable sudo Password
 ---------------------------------------------------
 
-Before getting started, we can configure a desktop shortcut to run the software with a visible terminal window. This will allow you to view debug messages and other code output.
-
-Steps:
+If you do not need to view the debugging information and want to close the command terminal window, follow the steps below.
 
 Open the terminal on your Raspberry Pi.
 
@@ -674,19 +703,17 @@ After modifying the permissions for Freenove.desktop, please follow these steps:
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_34.png
     :align: center
 
-Change the parameter of **Terminal** from false to **ture**, save and clost the file.
+Change the parameter of **Terminal** from true to **false**, save and clost the file. Restart the software - the command terminal window will no longer open.
 
 .. image:: ../_static/imgs/4_APP_Control/Chapter04_35.png
     :align: center
 
-Double click Freenove software on the desktop, click “**Execute**” upon the pop-up window to launch it
+However, with the command terminal closed, you will have nowhere to enter your password when sudo is needed (because passwordless sudo is disabled by default in Trixie). To allow the software to run properly, you must enable passwordless sudo. To do this, open a terminal and run "**sudo raspi-config**", then select: "1 System Options" -> "S10 Admin Password" -> "No" -> "OK".
 
-.. image:: ../_static/imgs/4_APP_Control/Chapter04_36.png
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_98.png
     :align: center
 
-When you open the Freenove software control interface, a command terminal will automatically launch alongside it. All debug information and program logs will be displayed in this terminal window.
-
-.. image:: ../_static/imgs/4_APP_Control/Chapter04_37.png
+.. image:: ../_static/imgs/4_APP_Control/Chapter04_99.png
     :align: center
 
 Interface Configuration
